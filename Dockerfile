@@ -9,6 +9,16 @@ LABEL maintainer="Luca Perret <perret.luca@gmail.com>" \
       org.label-schema.version=latest \
       org.label-schema.schema-version="1.0"
 
+
+ENV APP_NAME strapi-app
+ENV DATABASE_CLIENT mongo 
+ENV DATABASE_HOST mongo-cluster-jn3ix.gcp.mongodb.net 
+ENV DATABASE_PORT 27017 
+ENV DATABASE_NAME strapi2
+ENV DATABASE_SRV true
+ENV DATABASE_USERNAME strapi
+ENV DATABASE_PASSWORD strapi
+
 WORKDIR /usr/src/api
 
 RUN echo "unsafe-perm = true" >> ~/.npmrc

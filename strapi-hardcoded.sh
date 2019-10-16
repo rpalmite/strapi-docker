@@ -24,7 +24,8 @@ DATABASE_PASSWORD=strapi
 
 if [ ! -f "$APP_NAME/package.json" ]
 then
-    strapi new ${APP_NAME} --dbclient=$DATABASE_CLIENT --dbhost=$DATABASE_HOST --dbport=$DATABASE_PORT --dbsrv=$DATABASE_SRV --dbname=$DATABASE_NAME --dbusername=$DATABASE_USERNAME --dbpassword=$DATABASE_PASSWORD --dbssl=$DATABASE_SSL --dbauth=$DATABASE_AUTHENTICATION_DATABASE $EXTRA_ARGS
+    strapi new strapi-app --dbclient=mongo --dbhost=mongo-cluster-jn3ix.gcp.mongodb.net --dbport=27017 --dbsrv=true --dbname=strapi2 --dbusername=strapi --dbpassword=strapi --dbssl=true --dbauth=admin $EXTRA_ARGS
+
 elif [ ! -d "$APP_NAME/node_modules" ]
 then
     npm install --prefix ./$APP_NAME
